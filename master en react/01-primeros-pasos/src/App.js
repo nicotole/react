@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import MyComponent from './MyComponent';
 import MySecondComponent from './MySecondComponent';
+import { MyThirdComponent } from './MyThirdComponent';
 // import MyComponent so i can use it
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <MyComponent />
         {/* I call MyComponent*/}
         <MySecondComponent />
+        <MyThirdComponent />
       </header>
     </div>
   );
