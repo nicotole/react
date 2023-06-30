@@ -3,9 +3,18 @@ import './App.css';
 import MyComponent from './MyComponent';
 import MySecondComponent from './MySecondComponent';
 import { MyThirdComponent } from './MyThirdComponent';
+import { MyFourthComponent } from './MyFourthComponent';
 // import MyComponent so i can use it
 
 function App() {
+
+  const ficha_medica={
+    altura : "175cm",
+    grupo: "E+",
+    estado: "Bueno",
+    alergias: "Ninguna"
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +26,11 @@ function App() {
         {/* I call MyComponent*/}
         <MySecondComponent />
         <MyThirdComponent />
+        <MyFourthComponent 
+          nombre='Nico' 
+          apellido='Toledo'
+          ficha={ficha_medica}
+          />
       </header>
     </div>
   );
