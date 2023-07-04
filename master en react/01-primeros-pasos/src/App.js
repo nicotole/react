@@ -4,6 +4,7 @@ import MyComponent from './MyComponent';
 import MySecondComponent from './MySecondComponent';
 import { MyThirdComponent } from './MyThirdComponent';
 import { MyFourthComponent } from './MyFourthComponent';
+import { MyEventsComponent } from './MyEventsComponent';
 // import MyComponent so i can use it
 
 function App() {
@@ -31,6 +32,8 @@ function App() {
           apellido='Toledo'
           ficha={ficha_medica}
           />
+
+        <MyEventsComponent />
       </header>
     </div>
   );
