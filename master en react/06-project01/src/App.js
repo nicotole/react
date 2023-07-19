@@ -1,3 +1,6 @@
+import { Listado } from "./components/Listado";
+import { Buscador } from "./components/Buscador";
+import { Crear } from "./components/Crear";
 
 function App() {
   return (
@@ -24,31 +27,13 @@ function App() {
 
     <section className="content">
         {/* aca van las pelis */}
-        <article className="peli-item">
-            <h3 className="title"> Fuego en el cielo</h3>
-            <p className="description"> El cielo tiene fuego </p>
-            <button className="edit">Editar</button>
-            <button className="delete">Borrar</button>
-        </article> 
+        <Listado />
     </section>
 
     {/* barra lateral */}
     <aside className="lateral">
-        <div className="search"></div>
-        <h3 className="title">Buscador</h3>
-        <form>
-            <input type="text" />
-            <button> Buscar </button>
-        </form>
-
-        <div className="add">
-            <h3 className="title"> Añadir Pelicula</h3>
-            <form>
-                <input type="text" aria-placeholder="Titulo" />
-                <textarea placeholder="Descripción"></textarea>
-                <input type="submit" value="Guardar" />
-            </form>
-        </div>
+        <Buscador />
+        <Crear />
     </aside>
 
     {/* pie de pagina */}
