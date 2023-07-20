@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 export const Crear = () => {
 
   const tituloComponente = "Añadir pelicula";
-  
+
   const [peliState , setPeliState ] = useState({
     titulo : '',
     descripcion : ''
@@ -27,7 +27,31 @@ export const Crear = () => {
       descripcion 
     }
 
+    //guardar estado
     setPeliState(peli);
+
+    //guardar en almacenamiento local
+    
+    guardarEnEstorage(peli);
+
+  }
+
+  const guardarEnEstorage = peli =>{
+    //conseguir elementos que ya tenemos en localStorage
+    let elementos = JSON.parse(localStorage.getItem('pelis'));
+    
+    //comprobar que sea un array
+    if(Array.isArray(elementos)){
+      elementos.push(peli);
+    }else{
+      elementos = [peli];
+    }
+
+    //guardar en el localStorage
+    localStorage.setItem('pelis', JSON.stringify(peli));
+   
+    //devolver objeto guardado
+    return peli;
   }
 
   return (
