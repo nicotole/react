@@ -14,7 +14,6 @@ export const Crear = () => {
 
   const conseguirDatosForm = e => {
     e.preventDefault();//se evita el funcionamiento por defecto del  formulario, se evita que se refresque la pagina al enviar
-    alert("formulario enviado");
 
     let target = e.target;
     let titulo = target.titulo.value;
@@ -53,9 +52,7 @@ export const Crear = () => {
                   id="titulo"
                   name="titulo" 
                   aria-placeholder="Titulo"
-                  
                 />
-
                 <textarea 
                   id="descripcion"
                   name="descripcion"
@@ -66,7 +63,6 @@ export const Crear = () => {
                 <input 
                   type="submit"
                   value="Guardar"
-                
                 />
             </form>
     </div>
