@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from 'react'
 
-export const Listado = () => {
+export const Listado = ({listadoState, setListadoState}) => {
 
-  const [listadoState, setListadoState] = useState([]);
+  // const [listadoState, setListadoState] = useState([]); //lo pasamos a App.js 
+  //este estado entra como prop
   
   useEffect(() => {
-    console.log("Listado de peliculas component")
     conseguirPeliculas();
   }, []);//se ejecuta al montar el componente
-
   
   const conseguirPeliculas = () => {
     let peliculas = JSON.parse(localStorage.getItem("pelis"));
-    // console.log(peliculas);
     setListadoState(peliculas);
   }
 
