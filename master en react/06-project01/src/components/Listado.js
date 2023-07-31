@@ -10,6 +10,7 @@ export const Listado = ({listadoState, setListadoState}) => {
   
   useEffect(() => {
     conseguirPeliculas();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);//se ejecuta al montar el componente 
   
   const conseguirPeliculas = () => {
@@ -44,7 +45,11 @@ export const Listado = ({listadoState, setListadoState}) => {
               
               {/* se carga el cormulario al clickear en editar */}
               {peli.id === editar && (
-                  <Editar />
+                  <Editar peli={peli}
+                    conseguirPeliculas = {conseguirPeliculas}
+                    setEditar = {setEditar}
+                    setListadoState = {setListadoState}
+                  />
                 )
               }
           </article>
