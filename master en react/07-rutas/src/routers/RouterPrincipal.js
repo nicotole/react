@@ -1,10 +1,15 @@
 import React from 'react'
 import { Routes, Route, NavLink, BrowserRouter, Navigate} from 'react-router-dom';
-import { Inicio } from '../components/Inicio'
-import { Contacto } from '../components/Contacto'
-import { Articulos } from '../components/Articulos'
+import { Inicio } from '../components/Inicio';
+import { InicioPanel } from '../components/panel/InicioPanel';
+import { Contacto } from '../components/Contacto';
+import { Articulos } from '../components/Articulos';
 import { Error } from '../components/Error';
 import { Persona } from '../components/Persona';
+import { PanelControl } from '../components/PanelControl';
+import { Crear } from '../components/panel/Crear';
+import { Gestion } from '../components/panel/Gestion';
+import { Acerca } from '../components/panel/Acerca';
 
 export const RouterPrincipal = () => {
   return (
@@ -33,6 +38,12 @@ export const RouterPrincipal = () => {
                 className={ ({isActive}) => isActive ? "Activado" : "" }
               >Articulo</NavLink>
             </li>
+            <li>
+              <NavLink 
+                to="/panel"
+                className={ ({isActive}) => isActive ? "Activado" : "" }
+              >Panel de control</NavLink>
+            </li>
           </ul>
         </nav>
         
@@ -46,7 +57,15 @@ export const RouterPrincipal = () => {
             <Route path="/persona/:nombre" element={<Persona/>} />
             <Route path="/persona/:nombre/:apellido" element={<Persona/>} />
             <Route path="/persona" element={<Persona/>} />
-            <Route path={"/redirigir"} element={<Navigate to="/Persona/Nico/Toledo" />} />
+            <Route path={"/redirigir"} element={<Navigate to="/Persona/Nico/Toledo" />} /> 
+
+            <Route path="/panel/*" element={<PanelControl /> } >
+              <Route path="inicio" element={<InicioPanel /> } />
+              <Route path="crear-articulos" element={<Crear/>} />
+              <Route path="gestion-usuarios" element={<Gestion/>} />
+              <Route path="acerca-de" element={<Acerca /> } />
+            </Route>
+
             <Route path="*" element={<Error />} />  
         </Routes>
 
