@@ -71,9 +71,12 @@ code {
   transition: all 300ms;
 }
 
+.header .active,
 .header li a:hover{
   color: #fa4539;
 }
+
+
 
 .content{
   min-height: 500px;
