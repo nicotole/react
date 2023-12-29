@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 export const HeaderNav = () => {
   return (
     
-    <header>
+    <header className='header'>
         <div className="logo">
             <span>
                 DEV
