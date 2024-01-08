@@ -229,3 +229,8 @@ button{
 
 }
 
+.page-work .mask{
+  height: 100px;
+  overflow: hidden;
+  box-shadow: 0px 0px 0px #ddd;
+}
