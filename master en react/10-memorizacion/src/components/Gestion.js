@@ -22,7 +22,7 @@ export const Gestion = () => {
         <p>Los usuarios vienen de jsonplaceholder</p>
         <button onClick={ () => {setPage(1)}}>Pagina 1</button>
         <button onClick={() => {setPage(2)}}>Pagina 2</button>
-        <Empleados page={page}/>
+        <Empleados pagina={page}/>
     </div>
   )
 }
