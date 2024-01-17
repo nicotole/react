@@ -4,7 +4,8 @@ import { Empleados } from './Empleados'
 export const Gestion = () => {
 
     const [ nombre , setNombre] = useState("");
-
+    const [ page, setPage] = useState(1);
+    
     const gestorInput = useRef(); //referencia al input
 
     const asignarGestor = (e) => {
@@ -19,7 +20,9 @@ export const Gestion = () => {
         <input type='text' ref={gestorInput} onChange={asignarGestor} placeholder='Introduce Nombre'></input>
         <h2>Listado de empleados:</h2>
         <p>Los usuarios vienen de jsonplaceholder</p>
-        <Empleados />
+        <button onClick={ () => {setPage(1)}}>Pagina 1</button>
+        <button onClick={() => {setPage(2)}}>Pagina 2</button>
+        <Empleados page={page}/>
     </div>
   )
 }
