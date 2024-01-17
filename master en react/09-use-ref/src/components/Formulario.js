@@ -18,7 +18,7 @@ export const Formulario = () => {
         // miCaja.current.classList.add('fondo-verde'); podemos hacer asi o como en las prox 2 lineas
         let { current: caja } = miCaja; //desestructuramos asi podemos llamar "caja" en lugar de miCaja.current
         caja.classList.add('fondoVerde');
-        caja.innerHTML = 'fomulario enviado'
+        caja.innerHTML = 'fomulario enviado';
     }
 
   return (
